@@ -22,4 +22,12 @@ describe 'A Tic Tac Toe board' do
   	board.place(:x, :top, :left)
   	expect(board.token_at(:top, :left)).to eq(:x)
   end
+
+  it 'becomes empty after resetting' do
+  	board = Board.new
+  	board.place(:x, :top, :left)
+  	board.reset
+  	expect(board).to be_empty
+  end
+
 end
